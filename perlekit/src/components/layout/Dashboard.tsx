@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import useCalculator from '../../hooks/useCalculator';
 import styles from './Dashboard.module.css';
 
-const Dashboard = memo(() => {
+interface Props {
+  username: string;
+}
+
+const Dashboard = memo(({ username }: Props) => {
   const { stats, multiplierInfo, dailyPoints, tierInfo, totalDailyEarnings } = useCalculator();
 
   const quickStats = [
@@ -31,7 +35,7 @@ const Dashboard = memo(() => {
       <div className={styles.hero}>
         <div className={styles.heroText}>
           <h1 className={styles.heroTitle}>
-            Perle<span className={styles.accent}>Kit</span>
+            GM, <span className={styles.accent}>@{username}</span> 👋
           </h1>
           <p className={styles.heroSub}>
             Your personal strategy hub for maximizing earnings on the Perle Labs contributor platform.

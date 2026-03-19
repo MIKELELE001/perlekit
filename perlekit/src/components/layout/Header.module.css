@@ -53,6 +53,38 @@
   gap: 16px;
 }
 
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-glow);
+  border-radius: var(--radius-sm);
+}
+
+.username {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.resetBtn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+  transition: color var(--transition);
+  line-height: 1;
+}
+
+.resetBtn:hover {
+  color: var(--accent);
+}
+
 .ctaLink {
   font-size: 0.85rem;
   font-weight: 700;
