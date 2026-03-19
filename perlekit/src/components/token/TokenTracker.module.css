@@ -1,0 +1,139 @@
+.solCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 16px;
+}
+
+.solLeft { flex: 1; }
+
+.solLabel {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.solPrice {
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.solLoading {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  font-family: var(--font-mono);
+}
+
+.solError {
+  font-size: 0.8rem;
+  color: var(--red);
+  margin-bottom: 4px;
+}
+
+.solUpdated {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.solRight {
+  text-align: right;
+}
+
+.solNetwork {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.solBadge {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--green);
+  margin-bottom: 6px;
+}
+
+.solReason {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  max-width: 200px;
+  text-align: right;
+  line-height: 1.4;
+}
+
+.estimateGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.estimateCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.estimateLabel {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 8px;
+}
+
+.estimateValue {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.accent { color: var(--accent); }
+.green { color: var(--green); }
+.blue { color: var(--blue); }
+
+.estimateSub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.disclaimer {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+}
+
+.disclaimer span {
+  flex-shrink: 0;
+}
+
+.disclaimer p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .solCard { flex-direction: column; }
+  .estimateGrid { grid-template-columns: 1fr; }
+  .solRight { text-align: left; }
+  .solReason { text-align: left; }
+}

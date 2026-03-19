@@ -1,0 +1,32 @@
+.wrapper {
+  padding-top: 4px;
+}
+
+.summary {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.summaryItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.summaryLabel {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.summaryValue {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.green {
+  color: var(--green);
+}

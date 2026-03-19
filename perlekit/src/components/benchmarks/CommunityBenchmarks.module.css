@@ -1,0 +1,152 @@
+.comparisonCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.compList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.compRow {}
+
+.compHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.compLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.compValues {
+  display: flex;
+  gap: 16px;
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+}
+
+.yourVal { font-weight: 600; }
+.good { color: var(--green); }
+.below { color: var(--blue); }
+.avgVal { color: var(--text-muted); }
+.topVal { color: var(--accent); }
+
+.barTrack {
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  position: relative;
+  overflow: visible;
+}
+
+.avgMarker {
+  position: absolute;
+  top: -3px;
+  width: 2px;
+  height: 14px;
+  background: var(--text-muted);
+  border-radius: 1px;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.allTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.benchmarkGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.benchCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  opacity: 0.6;
+  transition: all var(--transition);
+}
+
+.benchCard.activeBench {
+  opacity: 1;
+  border-color: var(--accent-glow);
+}
+
+.benchCard:hover {
+  opacity: 1;
+}
+
+.benchHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.benchEmoji { font-size: 1.1rem; }
+
+.benchTier {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.benchStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.benchStat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.benchStatLabel {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.benchStatValue {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.topEarner { color: var(--accent); }
+
+@media (max-width: 768px) {
+  .benchmarkGrid { grid-template-columns: 1fr 1fr; }
+  .compValues { flex-direction: column; gap: 2px; }
+}
