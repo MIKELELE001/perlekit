@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import useLocalStorage from './useLocalStorage';
 import { ContributorStats, Domain } from '../types';
 import {
@@ -6,6 +7,8 @@ import {
   getTierInfo,
   calculateReferralProjection,
 } from '../utils/calculations';
+import { upsertContributorStats } from '../services/supabase';
+import { useUsername } from '../context/UserContext';
 
 const DEFAULT_STATS: ContributorStats = {
   streakDays: 0,
@@ -17,11 +20,21 @@ const DEFAULT_STATS: ContributorStats = {
 };
 
 const useCalculator = () => {
+  const username = useUsername();
   const [stats, setStats] = useLocalStorage<ContributorStats>('perle-stats-v1', DEFAULT_STATS);
 
-  const updateStats = (updates: Partial<ContributorStats>): void => {
-    setStats({ ...stats, ...updates });
-  };
+  const updateStats = useCallback(
+    (updates: Partial<ContributorStats>): void => {
+      const newStats = { ...stats, ...updates };
+      setStats(newStats);
+      if (username) {
+        upsertContributorStats(username, newStats).catch(() => {
+          // silently fail — local data still saved
+        });
+      }
+    },
+    [stats, setStats, username]
+  );
 
   const resetStats = (): void => {
     setStats(DEFAULT_STATS);

@@ -159,6 +159,46 @@
   margin-top: 8px;
 }
 
+.errorRow {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--red);
+  padding: 16px;
+}
+
+.liveTag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.usernameCell {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.tableHead {
+  display: grid;
+  grid-template-columns: 80px 1fr 120px 140px;
+  padding: 8px 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 4px;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 80px 1fr 120px 140px;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+}
+
 @media (max-width: 768px) {
   .estimateCard { flex-direction: column; align-items: flex-start; }
   .estimateRight { max-width: 100%; width: 100%; }
